@@ -1,0 +1,313 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "audio-book-bangabandhu",
+    "dateExported": "2023-06-20T14:35:27.717Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "64407aa5-a4e4-4ed5-9f32-1860cd8a1d3e",
+            "colId": "c3ade24b-00b7-4667-aaa6-e6c6428f6249",
+            "containerId": "",
+            "name": "registration",
+            "url": "http://127.0.0.1:8000/user/registration/",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-06-18T17:01:04.106Z",
+            "modified": "2023-06-19T15:56:37.515Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "testuser1"
+                    },
+                    {
+                        "name": "email",
+                        "value": "testuser1@email.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "testuser@123"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "dda7fc5e-6451-478b-b965-47b35306f9b7",
+            "colId": "c3ade24b-00b7-4667-aaa6-e6c6428f6249",
+            "containerId": "",
+            "name": "login",
+            "url": "http://127.0.0.1:8000/user/login/",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-06-18T17:01:26.482Z",
+            "modified": "2023-06-20T14:28:18.015Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "email",
+                        "value": "testuser1@email.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "testuser@123"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "53c5fada-231f-4059-9085-8e4c3ab17d4a",
+            "colId": "c3ade24b-00b7-4667-aaa6-e6c6428f6249",
+            "containerId": "",
+            "name": "token verify",
+            "url": "http://127.0.0.1:8000/user/token/verify/",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-06-18T17:02:20.220Z",
+            "modified": "2023-06-19T15:56:36.004Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "token",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3MTkzNjUwLCJpYXQiOjE2ODcxOTAwNTAsImp0aSI6ImFiNTE0MGZmNWQxNjQ3MjdiNTA1NTMzMzhhNGIwZTExIiwidXNlcl9pZCI6M30.7h6MKWaMma7lzUPsIUL42OoinFHTEXHkCIerbWr12Ec"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3MTkzNjUwLCJpYXQiOjE2ODcxOTAwNTAsImp0aSI6ImFiNTE0MGZmNWQxNjQ3MjdiNTA1NTMzMzhhNGIwZTExIiwidXNlcl9pZCI6M30.7h6MKWaMma7lzUPsIUL42OoinFHTEXHkCIerbWr12Ec"
+            },
+            "tests": []
+        },
+        {
+            "_id": "e172316d-9035-4a94-ba72-de22bd6e61f2",
+            "colId": "c3ade24b-00b7-4667-aaa6-e6c6428f6249",
+            "containerId": "",
+            "name": "token refresh",
+            "url": "http://127.0.0.1:8000/bangabandhu/audiobook/",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-06-18T17:33:22.121Z",
+            "modified": "2023-06-20T14:27:42.215Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "test"
+                    },
+                    {
+                        "name": "language",
+                        "value": "language"
+                    },
+                    {
+                        "name": "translated_name",
+                        "value": "translated_name"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY4NzI3NjQ1MCwiaWF0IjoxNjg3MTkwMDUwLCJqdGkiOiI0YzZmNzc0YTFjYTc0YTE1YjAyYzkxYmUxYjkxZjVkYiIsInVzZXJfaWQiOjN9.WEqv4RGUa4v6b9BUIMDrf7GsWMPc1wRZYGRCRvXwmLY"
+            },
+            "tests": []
+        },
+        {
+            "_id": "b0fa485a-0a79-4592-a188-d7edcdb05b92",
+            "colId": "c3ade24b-00b7-4667-aaa6-e6c6428f6249",
+            "containerId": "",
+            "name": "create audio book",
+            "url": "https://bangabandhu.agrexcointernational.com/bangabandhu/audiobook/",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2023-06-20T14:26:22.333Z",
+            "modified": "2023-06-20T14:32:39.875Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "translated_name",
+                        "value": "translated_name"
+                    },
+                    {
+                        "name": "language",
+                        "value": "language"
+                    },
+                    {
+                        "name": "name",
+                        "value": "name"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3Mjc0ODk4LCJpYXQiOjE2ODcyNzEyOTgsImp0aSI6IjIzM2NhNWJkYmFjMjRkZDg4OGJmMDg3ZTFmNGIzMTNlIiwidXNlcl9pZCI6Mn0.EjXffMVRC6gISYjZ_NCvZ-OOgErkhAnmcAVzoPAD1so"
+            },
+            "tests": []
+        },
+        {
+            "_id": "b3559863-5595-484b-863d-8aa4908c6574",
+            "colId": "c3ade24b-00b7-4667-aaa6-e6c6428f6249",
+            "containerId": "",
+            "name": "list audio book",
+            "url": "https://bangabandhu.agrexcointernational.com/bangabandhu/audiobook/1/",
+            "method": "PUT",
+            "sortNum": 70000,
+            "created": "2023-06-20T14:32:51.484Z",
+            "modified": "2023-06-20T14:33:50.263Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "translated_name",
+                        "value": "translated_name"
+                    },
+                    {
+                        "name": "language",
+                        "value": "language"
+                    },
+                    {
+                        "name": "name",
+                        "value": "name 1"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3Mjc0ODk4LCJpYXQiOjE2ODcyNzEyOTgsImp0aSI6IjIzM2NhNWJkYmFjMjRkZDg4OGJmMDg3ZTFmNGIzMTNlIiwidXNlcl9pZCI6Mn0.EjXffMVRC6gISYjZ_NCvZ-OOgErkhAnmcAVzoPAD1so"
+            },
+            "tests": []
+        },
+        {
+            "_id": "acfbdb96-1a57-4c6d-abe6-8a6faee24d92",
+            "colId": "c3ade24b-00b7-4667-aaa6-e6c6428f6249",
+            "containerId": "",
+            "name": "update audio book",
+            "url": "https://bangabandhu.agrexcointernational.com/bangabandhu/audiobook/",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2023-06-20T14:33:19.117Z",
+            "modified": "2023-06-20T14:33:19.117Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "translated_name",
+                        "value": "translated_name"
+                    },
+                    {
+                        "name": "language",
+                        "value": "language"
+                    },
+                    {
+                        "name": "name",
+                        "value": "name"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3Mjc0ODk4LCJpYXQiOjE2ODcyNzEyOTgsImp0aSI6IjIzM2NhNWJkYmFjMjRkZDg4OGJmMDg3ZTFmNGIzMTNlIiwidXNlcl9pZCI6Mn0.EjXffMVRC6gISYjZ_NCvZ-OOgErkhAnmcAVzoPAD1so"
+            },
+            "tests": []
+        },
+        {
+            "_id": "b6f8c97f-138d-4da6-902c-0c987505f173",
+            "colId": "c3ade24b-00b7-4667-aaa6-e6c6428f6249",
+            "containerId": "",
+            "name": "details audio book",
+            "url": "https://bangabandhu.agrexcointernational.com/bangabandhu/audiobook/",
+            "method": "GET",
+            "sortNum": 85000,
+            "created": "2023-06-20T14:34:39.524Z",
+            "modified": "2023-06-20T14:34:39.524Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "translated_name",
+                        "value": "translated_name"
+                    },
+                    {
+                        "name": "language",
+                        "value": "language"
+                    },
+                    {
+                        "name": "name",
+                        "value": "name"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3Mjc0ODk4LCJpYXQiOjE2ODcyNzEyOTgsImp0aSI6IjIzM2NhNWJkYmFjMjRkZDg4OGJmMDg3ZTFmNGIzMTNlIiwidXNlcl9pZCI6Mn0.EjXffMVRC6gISYjZ_NCvZ-OOgErkhAnmcAVzoPAD1so"
+            },
+            "tests": []
+        },
+        {
+            "_id": "0a7f5c73-798d-488c-b24c-c42ce3ef963f",
+            "colId": "c3ade24b-00b7-4667-aaa6-e6c6428f6249",
+            "containerId": "",
+            "name": "delete audio book",
+            "url": "https://bangabandhu.agrexcointernational.com/bangabandhu/audiobook/1/",
+            "method": "DELETE",
+            "sortNum": 90000,
+            "created": "2023-06-20T14:34:21.668Z",
+            "modified": "2023-06-20T14:35:18.265Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "translated_name",
+                        "value": "translated_name"
+                    },
+                    {
+                        "name": "language",
+                        "value": "language"
+                    },
+                    {
+                        "name": "name",
+                        "value": "name"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3Mjc0ODk4LCJpYXQiOjE2ODcyNzEyOTgsImp0aSI6IjIzM2NhNWJkYmFjMjRkZDg4OGJmMDg3ZTFmNGIzMTNlIiwidXNlcl9pZCI6Mn0.EjXffMVRC6gISYjZ_NCvZ-OOgErkhAnmcAVzoPAD1so"
+            },
+            "tests": []
+        }
+    ]
+}

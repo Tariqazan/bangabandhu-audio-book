@@ -24,6 +24,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("user/", include("user.urls")),
     path("global/", include("global.urls")),
+    path("bangabandhu/", include("bangabandhu.urls")),
 ]
 
 # Serve media and static files during development

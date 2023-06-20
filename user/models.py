@@ -30,7 +30,8 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractUser):
-    role = models.ForeignKey(Group, on_delete=models.DO_NOTHING, blank=True, null=True)
+    role = models.ForeignKey(
+        Group, on_delete=models.DO_NOTHING, blank=True, null=True)
     email = models.CharField(max_length=64, blank=True, null=True, unique=True)
     status = models.CharField(max_length=10, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -43,9 +44,12 @@ class User(AbstractUser):
     def __str__(self):
         return self.email
 
+    class Meta:
+        db_table = "User"
 
 class Profile(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, blank=True, null=True)
     first_name = models.CharField(max_length=48, blank=True, null=True)
     last_name = models.CharField(max_length=48, blank=True, null=True)
     phone = models.CharField(max_length=15, blank=True, null=True)
@@ -55,3 +59,15 @@ class Profile(models.Model):
     country = models.CharField(max_length=128, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "Profile"
+
+class UserRole(models.Model):
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "UserRole"
