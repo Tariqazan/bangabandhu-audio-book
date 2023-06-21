@@ -1,0 +1,385 @@
+{
+	"info": {
+		"_postman_id": "23655ab1-aa76-4b06-8a60-d770f91b1556",
+		"name": "bangabandhu audio book",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27691551"
+	},
+	"item": [
+		{
+			"name": "language",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://bangabandhu.agrexcointernational.com/bangabandhu/language/?lang=1",
+							"protocol": "https",
+							"host": [
+								"bangabandhu",
+								"agrexcointernational",
+								"com"
+							],
+							"path": [
+								"bangabandhu",
+								"language",
+								""
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://bangabandhu.agrexcointernational.com/bangabandhu/language/1/",
+							"protocol": "https",
+							"host": [
+								"bangabandhu",
+								"agrexcointernational",
+								"com"
+							],
+							"path": [
+								"bangabandhu",
+								"language",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "audio book",
+			"item": [
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://bangabandhu.agrexcointernational.com/bangabandhu/audiobook/?lang=1",
+							"protocol": "https",
+							"host": [
+								"bangabandhu",
+								"agrexcointernational",
+								"com"
+							],
+							"path": [
+								"bangabandhu",
+								"audiobook",
+								""
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://bangabandhu.agrexcointernational.com/bangabandhu/audiobook/1/",
+							"protocol": "https",
+							"host": [
+								"bangabandhu",
+								"agrexcointernational",
+								"com"
+							],
+							"path": [
+								"bangabandhu",
+								"audiobook",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "book content",
+			"item": [
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://bangabandhu.agrexcointernational.com/bangabandhu/book/content/?lang=1",
+							"protocol": "https",
+							"host": [
+								"bangabandhu",
+								"agrexcointernational",
+								"com"
+							],
+							"path": [
+								"bangabandhu",
+								"book",
+								"content",
+								""
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://bangabandhu.agrexcointernational.com/bangabandhu/book/content/1/",
+							"protocol": "https",
+							"host": [
+								"bangabandhu",
+								"agrexcointernational",
+								"com"
+							],
+							"path": [
+								"bangabandhu",
+								"book",
+								"content",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "page",
+			"item": [
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://bangabandhu.agrexcointernational.com/bangabandhu/page/?lang=1",
+							"protocol": "https",
+							"host": [
+								"bangabandhu",
+								"agrexcointernational",
+								"com"
+							],
+							"path": [
+								"bangabandhu",
+								"page",
+								""
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://bangabandhu.agrexcointernational.com/bangabandhu/page/1/",
+							"protocol": "https",
+							"host": [
+								"bangabandhu",
+								"agrexcointernational",
+								"com"
+							],
+							"path": [
+								"bangabandhu",
+								"page",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "page audio",
+			"item": [
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://bangabandhu.agrexcointernational.com/bangabandhu/page/audio/?lang=1",
+							"protocol": "https",
+							"host": [
+								"bangabandhu",
+								"agrexcointernational",
+								"com"
+							],
+							"path": [
+								"bangabandhu",
+								"page",
+								"audio",
+								""
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://bangabandhu.agrexcointernational.com/bangabandhu/page/audio/1/",
+							"protocol": "https",
+							"host": [
+								"bangabandhu",
+								"agrexcointernational",
+								"com"
+							],
+							"path": [
+								"bangabandhu",
+								"page",
+								"audio",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "bookmark",
+			"item": [
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://bangabandhu.agrexcointernational.com/bangabandhu/bookmark/?lang=1",
+							"protocol": "https",
+							"host": [
+								"bangabandhu",
+								"agrexcointernational",
+								"com"
+							],
+							"path": [
+								"bangabandhu",
+								"bookmark",
+								""
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://bangabandhu.agrexcointernational.com/bangabandhu/bookmark/1/",
+							"protocol": "https",
+							"host": [
+								"bangabandhu",
+								"agrexcointernational",
+								"com"
+							],
+							"path": [
+								"bangabandhu",
+								"bookmark",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
