@@ -19,7 +19,7 @@ class AudioBookSerializer(serializers.ModelSerializer):
 class BookContentSerializer(serializers.ModelSerializer):
     class Meta:
         model = BookContent
-        fields = ('id', 'audio_book', 'content')
+        fields = ('id', 'audio_book', 'content', 'start_page', 'end_page')
         depth = 1
 
 

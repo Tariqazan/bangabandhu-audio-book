@@ -33,6 +33,7 @@ class User(AbstractUser):
     role = models.ForeignKey(
         Group, on_delete=models.DO_NOTHING, blank=True, null=True)
     email = models.CharField(max_length=64, blank=True, null=True, unique=True)
+    profile_pic = models.ImageField(upload_to="user/", blank=True, null=True)
     status = models.CharField(max_length=10, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -46,6 +47,7 @@ class User(AbstractUser):
 
     class Meta:
         db_table = "User"
+
 
 class Profile(models.Model):
     user = models.ForeignKey(
@@ -62,6 +64,7 @@ class Profile(models.Model):
 
     class Meta:
         db_table = "Profile"
+
 
 class UserRole(models.Model):
     user = models.ForeignKey(

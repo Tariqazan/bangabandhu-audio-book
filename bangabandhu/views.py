@@ -53,8 +53,10 @@ class PageListView(generics.ListAPIView):
 
     def get_queryset(self):
         language_id = self.request.GET.get('lang')
+        page_number = self.request.GET.get('page_number')
+        chapter_name = self.request.GET.get('chapter_name')
         pages = self.queryset.objects.filter(
-            audio_book__language_id=language_id)
+            audio_book__language_id=language_id, page_number=page_number, chapter__content=chapter_name)
         return pages
 
 
@@ -69,8 +71,10 @@ class PageAudioListView(generics.ListAPIView):
 
     def get_queryset(self):
         language_id = self.request.GET.get('lang')
+        page_number = self.request.GET.get('page_number')
+        chapter_name = self.request.GET.get('chapter_name')
         page_audios = self.queryset.objects.filter(
-            page__audio_book__language_id=language_id)
+            page__audio_book__language_id=language_id, page__page_number=page_number, page__chapter__content=chapter_name)
         return page_audios
 
 
