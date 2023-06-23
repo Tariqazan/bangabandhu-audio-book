@@ -68,7 +68,7 @@ class Page(models.Model):
         db_table = 'Page'
 
     def __str__(self) -> str:
-        return f'{self.page_number}-{self.chapter.content}-{self.audio_book.name}-{self.audio_book.language.name}'
+        return f'{self.page_number}-{self.chapter.content}-{self.audio_book.name}-{self.audio_book.language.name}-line serial({self.line_serial})'
 
 
 class PageAudio(models.Model):

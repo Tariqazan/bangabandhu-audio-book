@@ -32,6 +32,7 @@ class PageSerializer(serializers.ModelSerializer):
 
 
 class PageAudioSerializer(serializers.ModelSerializer):
+    page = PageSerializer()
     class Meta:
         model = PageAudio
         fields = ('id', 'page', 'voice', 'speed', 'audio_path', 'audio',
