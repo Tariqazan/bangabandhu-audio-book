@@ -16,14 +16,8 @@ class LanguageRetrieveView(generics.RetrieveAPIView):
 
 
 class AudioBookListView(generics.ListAPIView):
-    queryset = AudioBook
+    queryset = AudioBook.objects.all()
     serializer_class = AudioBookSerializer
-
-    def get_queryset(self):
-        language_id = self.request.GET.get('lang')
-        audio_books = self.queryset.objects.filter(
-            language_id=language_id)
-        return audio_books
 
 
 class AudioBookRetrieveView(generics.RetrieveAPIView):

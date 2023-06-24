@@ -89,13 +89,6 @@
 								"bangabandhu",
 								"audiobook",
 								""
-							],
-							"query": [
-								{
-									"key": "lang",
-									"value": "1",
-									"disabled": true
-								}
 							]
 						}
 					},
@@ -119,6 +112,13 @@
 								"audiobook",
 								"1",
 								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -207,7 +207,7 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "https://bangabandhu.agrexcointernational.com/bangabandhu/page/?lang=1&page_number=2&chapter_name=ভূমিকা ix",
+							"raw": "https://bangabandhu.agrexcointernational.com/bangabandhu/page/?lang=2&page_number=1&chapter_name=Preface ix",
 							"protocol": "https",
 							"host": [
 								"bangabandhu",
@@ -222,15 +222,15 @@
 							"query": [
 								{
 									"key": "lang",
-									"value": "1"
-								},
-								{
-									"key": "page_number",
 									"value": "2"
 								},
 								{
+									"key": "page_number",
+									"value": "1"
+								},
+								{
 									"key": "chapter_name",
-									"value": "ভূমিকা ix"
+									"value": "Preface ix"
 								}
 							]
 						}
@@ -505,7 +505,7 @@
 							"formdata": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcxOTA3NzMxNywiaWF0IjoxNjg3NTQxMzE3LCJqdGkiOiJjYzY1NDYyZmY0ZDM0MTJlODVjOGI4ZTI0N2Y2ZDQyMCIsInVzZXJfaWQiOjN9.KLHX1hLVK4f3p58hJ6zZYomXtPhcui9KC89Omammvts",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcxOTE2NTQ3MiwiaWF0IjoxNjg3NjI5NDcyLCJqdGkiOiJmMjc4YWVkOTc1OTA0ZWIwYWVlMDlhMzE5MjdjODI5NSIsInVzZXJfaWQiOjJ9.bWUMn2vQhTvS8d5dyZIEpCaxtFKbtwfzhYgZIOjpwbc",
 									"type": "text"
 								}
 							]
@@ -538,7 +538,7 @@
 							"formdata": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE3NzgxMzk5LCJpYXQiOjE2ODc1NDEzMTcsImp0aSI6IjIwNTRjYzM3NzkyOTRhOTc4ZjY5MjdlZWE2NTBkMWY3IiwidXNlcl9pZCI6M30.glmHh9WMTucR0TcD63vQ85Q89tZHkW5A2SAH86kqZLg",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE3ODY5NDgyLCJpYXQiOjE2ODc2Mjk0NzIsImp0aSI6IjcxNWI5NTU1MmQwNDRmMGI5ODk2ZTY2MmU0MzM5NWYwIiwidXNlcl9pZCI6Mn0.cQk2Ls2xC9qXBgAcy38zZ0xu3epswDoU8TiQtD_Y6k0",
 									"type": "text"
 								}
 							]
@@ -556,6 +556,45 @@
 								"token",
 								"verify",
 								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "refresh_token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcxOTE2NTQ3MiwiaWF0IjoxNjg3NjI5NDcyLCJqdGkiOiJmMjc4YWVkOTc1OTA0ZWIwYWVlMDlhMzE5MjdjODI5NSIsInVzZXJfaWQiOjJ9.bWUMn2vQhTvS8d5dyZIEpCaxtFKbtwfzhYgZIOjpwbc",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://bangabandhu.agrexcointernational.com/user/logout/",
+							"protocol": "https",
+							"host": [
+								"bangabandhu",
+								"agrexcointernational",
+								"com"
+							],
+							"path": [
+								"user",
+								"logout",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
 							]
 						}
 					},

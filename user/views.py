@@ -70,3 +70,20 @@ class TokenRefreshView(APIView):
 class UserDetailsView(generics.RetrieveAPIView):
     queryset = User
     serializer_class = UserSerializer
+
+
+class LogoutView(APIView):
+    def post(self, request):
+        refresh_token = request.data.get("refresh_token")
+        print(refresh_token)
+
+        if refresh_token:
+            try:
+                token = RefreshToken(refresh_token)
+                print(token)
+                token.blacklist()
+                return Response({"message": "Logout successful."})
+            except Exception:
+                return Response({"message": "Invalid refresh token."}, status=400)
+        else:
+            return Response({"message": "Refresh token not provided."}, status=400)
