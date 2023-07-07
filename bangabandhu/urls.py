@@ -17,6 +17,6 @@ urlpatterns = [
     path('page/audio/', PageAudioListView.as_view()),
     path('page/audio/<int:pk>/', PageAudioRetrieveView.as_view()),
 
-    path('bookmark/', BookmarkListView.as_view()),
+    path('bookmark/', BookmarkListCreateView.as_view()),
     path('bookmark/<int:pk>/', BookmarkRetrieveView.as_view()),
 ]

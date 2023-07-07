@@ -5,7 +5,8 @@ from .views import (
     TokenVerifyView,
     TokenRefreshView,
     UserDetailsView,
-    LogoutView
+    LogoutView,
+    DashboardView
 )
 
 urlpatterns = [
@@ -16,4 +17,5 @@ urlpatterns = [
     path("token/verify/", TokenVerifyView.as_view(), name="token_verify"),
 
     path("<int:pk>/", UserDetailsView.as_view(), name="user_details"),
+    path("dashboard/", DashboardView.as_view(), name="dashboard"),
 ]

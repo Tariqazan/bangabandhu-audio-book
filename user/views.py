@@ -8,14 +8,14 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.tokens import AccessToken, RefreshToken
 
 from .models import User
-from .serializers import UserSerializer
+from .serializers import UserSerializer, UserRegistrationSerializer
 
 
 class UserRegistrationView(APIView):
     permission_classes = [AllowAny]
 
     def post(self, request):
-        serializer = UserSerializer(data=request.data)
+        serializer = UserRegistrationSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -67,7 +67,7 @@ class TokenRefreshView(APIView):
             return Response(status=400)
 
 
-class UserDetailsView(generics.RetrieveAPIView):
+class UserDetailsView(generics.RetrieveUpdateDestroyAPIView):
     queryset = User
     serializer_class = UserSerializer
 
@@ -87,3 +87,12 @@ class LogoutView(APIView):
                 return Response({"message": "Invalid refresh token."}, status=400)
         else:
             return Response({"message": "Refresh token not provided."}, status=400)
+
+
+class DashboardView(APIView):
+    def get(self, request, *args, **kwargs):
+        total_users = User.objects.all().count()
+        response = {
+            "total_users": total_users
+        }
+        return Response(response)

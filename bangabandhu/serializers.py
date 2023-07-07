@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Language, AudioBook, Page, PageAudio, BookContent, Bookmark
+from .models import Language, AudioBook, PageLineSerial, PageAudio, BookContent, Bookmark
 
 
 class LanguageSerializer(serializers.ModelSerializer):
@@ -23,24 +23,32 @@ class BookContentSerializer(serializers.ModelSerializer):
         depth = 1
 
 
-class PageSerializer(serializers.ModelSerializer):
+class PageLineSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Page
-        fields = ('id', 'audio_book', 'chapter', 'page_number', 'line_serial', 'paragraph_count', 'sentence_count',
+        model = PageLineSerial
+        fields = ('id', 'page_number', 'line_serial', 'paragraph_count', 'sentence_count',
                   'word_count', 'line_text', 'is_image', 'total_page', 'start_time', 'end_time', 'created_at', 'updated_at')
         depth = 1
 
 
 class PageAudioSerializer(serializers.ModelSerializer):
-    page = PageSerializer()
+
     class Meta:
         model = PageAudio
-        fields = ('id', 'page', 'voice', 'speed', 'audio_path', 'audio',
+        fields = ('id', 'page_number', 'voice', 'speed', 'audio_path', 'audio',
                   'audio_length', 'line_break_sleep', 'created_at', 'updated_at')
+
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        page_lines = PageLineSerial.objects.filter(
+            page_number=instance.page_number)
+        page_line_data = PageLineSerializer(page_lines, many=True)
+        representation['page_lines'] = page_line_data.data
+        print(representation)
+        return representation
 
 
 class BookmarkSerializer(serializers.ModelSerializer):
     class Meta:
         model = Bookmark
-        fields = ('id', 'user', 'page_number', 'paragraph',
-                  'sentence', 'created_at', 'updated_at')
+        fields = ('id', 'user', 'page', 'created_at', 'updated_at')
