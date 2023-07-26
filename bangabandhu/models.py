@@ -17,6 +17,7 @@ class Language(models.Model):
 
 class AudioBook(models.Model):
     name = models.CharField(max_length=248, blank=True, null=True)
+    total_pages = models.CharField(max_length=248, blank=True, null=True)
     language = models.ForeignKey(
         Language, related_name='audio_book_languages', on_delete=models.CASCADE, blank=True, null=True)
     translated_name = models.CharField(max_length=48, blank=True, null=True)
@@ -68,7 +69,6 @@ class PageLineSerial(models.Model):
     sentence_count = models.IntegerField(blank=True, null=True)
     word_count = models.IntegerField(blank=True, null=True)
     line_text = models.TextField(blank=True, null=True)
-    is_image = models.BooleanField(default=False)
     total_page = models.IntegerField(blank=True, null=True)
     start_time = models.CharField(max_length=100, blank=True, null=True)
     end_time = models.CharField(max_length=100, blank=True, null=True)
@@ -78,8 +78,8 @@ class PageLineSerial(models.Model):
     class Meta:
         db_table = 'PageLineSerial'
 
-    # def __str__(self) -> str:
-    #     return f'Page-{self.page_number.number}-line serial({self.line_serial})'
+    def __str__(self) -> str:
+        return f'Page Number - {self.page_number.number} - Book {self.page_number.audio_book.name} - Chapter {self.page_number.chapter.content} - Language {self.page_number.audio_book.language.name} - Line Serial {self.line_serial}'
 
 
 class PageAudio(models.Model):
@@ -90,6 +90,8 @@ class PageAudio(models.Model):
     audio = models.FileField(upload_to="audio", blank=True, null=True)
     audio_path = models.CharField(max_length=255, blank=True, null=True)
     audio_length = models.FloatField(blank=True, null=True)
+    is_image = models.BooleanField(default=False)
+    image = models.ImageField(blank=True, null=True, upload_to='line_image')
     line_break_sleep = models.CharField(max_length=100, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -97,15 +99,15 @@ class PageAudio(models.Model):
     class Meta:
         db_table = 'PageAudio'
 
-    # def __str__(self) -> str:
-    #     return f'page number - {self.page_number.number} - {self.page.audio_book.language.name}'
+    def __str__(self) -> str:
+        return f'Page Number - {self.page_number.number} - Book {self.page_number.audio_book.name} - Chapter {self.page_number.chapter.content} - Language {self.page_number.audio_book.language.name}'
 
 
 class Bookmark(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="users_bookmark", blank=True, null=True)
-    page = models.ForeignKey(
-        PageAudio, on_delete=models.CASCADE, blank=True, null=True)
+    line_serial = models.ForeignKey(
+        PageLineSerial, on_delete=models.CASCADE, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

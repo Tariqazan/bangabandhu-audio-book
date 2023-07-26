@@ -411,12 +411,12 @@
 							"formdata": [
 								{
 									"key": "username",
-									"value": "testuser",
+									"value": "testuser2",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "testuser@email.com",
+									"value": "testuser2@email.com",
 									"type": "text"
 								},
 								{
@@ -437,7 +437,8 @@
 								{
 									"key": "profile_pic",
 									"type": "file",
-									"src": "/G:/m-34.jpg"
+									"src": "/G:/m-34.jpg",
+									"disabled": true
 								}
 							]
 						},
@@ -468,7 +469,7 @@
 							"formdata": [
 								{
 									"key": "email",
-									"value": "testuser@email.com",
+									"value": "tariqmolla@email.com",
 									"type": "text"
 								},
 								{
@@ -570,8 +571,8 @@
 							"mode": "formdata",
 							"formdata": [
 								{
-									"key": "refresh_token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcxOTE2NTQ3MiwiaWF0IjoxNjg3NjI5NDcyLCJqdGkiOiJmMjc4YWVkOTc1OTA0ZWIwYWVlMDlhMzE5MjdjODI5NSIsInVzZXJfaWQiOjJ9.bWUMn2vQhTvS8d5dyZIEpCaxtFKbtwfzhYgZIOjpwbc",
+									"key": "access_token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE5MjQ1NjQwLCJpYXQiOjE2ODkwMDU2NDAsImp0aSI6Ijg0NGIyNzNmOWJhYzRlNGZhNWM3NWVlNjUzNmRiZTc0IiwidXNlcl9pZCI6Mn0.8sne33O2yK8L9f8CuDHjFCIbF90lOyWlyuRdz0UfpNc",
 									"type": "text"
 								}
 							]
@@ -608,10 +609,20 @@
 				{
 					"name": "profile",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE5MjQ1NjQwLCJpYXQiOjE2ODkwMDU2NDAsImp0aSI6Ijg0NGIyNzNmOWJhYzRlNGZhNWM3NWVlNjUzNmRiZTc0IiwidXNlcl9pZCI6Mn0.8sne33O2yK8L9f8CuDHjFCIbF90lOyWlyuRdz0UfpNc",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://bangabandhu.agrexcointernational.com/user/1/",
+							"raw": "https://bangabandhu.agrexcointernational.com/user/",
 							"protocol": "https",
 							"host": [
 								"bangabandhu",
@@ -620,7 +631,6 @@
 							],
 							"path": [
 								"user",
-								"1",
 								""
 							]
 						}
@@ -630,7 +640,17 @@
 				{
 					"name": "update",
 					"request": {
-						"method": "PUT",
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE5ODEwODk0LCJpYXQiOjE2ODk1NzA4OTQsImp0aSI6ImNmZWE0NzQ2ODZkOTQ5MTg4N2FhNTI0MzlhZDAzZmUzIiwidXNlcl9pZCI6Mn0.YBoBBoonie3iGb8o_tYtmIhxfYuW4NZ8WNvZkzhXNPE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "formdata",
@@ -642,13 +662,14 @@
 								},
 								{
 									"key": "last_name",
-									"value": "azan",
+									"value": "molla",
 									"type": "text"
 								},
 								{
 									"key": "profile_pic",
 									"type": "file",
-									"src": "/F:/monir/bangabandhu-audio-book/media/user/m-34.jpg"
+									"src": "/F:/monir/bangabandhu-audio-book/media/cover_image/m-34.jpg",
+									"disabled": true
 								},
 								{
 									"key": "username",
@@ -657,13 +678,18 @@
 								},
 								{
 									"key": "email",
-									"value": "tariqazan@email.com",
+									"value": "tariqmolla@email.com",
+									"type": "text"
+								},
+								{
+									"key": "date_of_birth",
+									"value": "1970-02-25",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "https://bangabandhu.agrexcointernational.com/user/1/",
+							"raw": "https://bangabandhu.agrexcointernational.com/user/",
 							"protocol": "https",
 							"host": [
 								"bangabandhu",
@@ -672,7 +698,6 @@
 							],
 							"path": [
 								"user",
-								"1",
 								""
 							]
 						}
@@ -741,19 +766,74 @@
 			"item": [
 				{
 					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE4MTczODk3LCJpYXQiOjE2ODc5MzM4OTcsImp0aSI6ImZjYWFhNmEyNmNmNDQwYmE5ZjdiOGY2Yzc2NDYxZGE1IiwidXNlcl9pZCI6Mn0.kUgm4IuPcyrZK8GL5PfFC-6MloxwM9HcMHAx3a8YBg0",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE5ODUyNDkzLCJpYXQiOjE2ODk2MTI0OTMsImp0aSI6ImQ3OTE0YzM0YTI0NzRkMWM4MzAzYzE1ZmViOTliZDI3IiwidXNlcl9pZCI6Mn0.IzVDVM4L79aZuI5L4b0MNLNJqQ87DUzQdTRKnV950qc",
 									"type": "string"
 								}
 							]
 						},
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://bangabandhu.agrexcointernational.com/bangabandhu/bookmark/?lang=2",
+							"protocol": "https",
+							"host": [
+								"bangabandhu",
+								"agrexcointernational",
+								"com"
+							],
+							"path": [
+								"bangabandhu",
+								"bookmark",
+								""
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE5ODUyNDkzLCJpYXQiOjE2ODk2MTI0OTMsImp0aSI6ImQ3OTE0YzM0YTI0NzRkMWM4MzAzYzE1ZmViOTliZDI3IiwidXNlcl9pZCI6Mn0.IzVDVM4L79aZuI5L4b0MNLNJqQ87DUzQdTRKnV950qc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "line_serial",
+									"value": "7",
+									"type": "text"
+								}
+							]
+						},
 						"url": {
 							"raw": "https://bangabandhu.agrexcointernational.com/bangabandhu/bookmark/",
 							"protocol": "https",
@@ -779,7 +859,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE4MTczODk3LCJpYXQiOjE2ODc5MzM4OTcsImp0aSI6ImZjYWFhNmEyNmNmNDQwYmE5ZjdiOGY2Yzc2NDYxZGE1IiwidXNlcl9pZCI6Mn0.kUgm4IuPcyrZK8GL5PfFC-6MloxwM9HcMHAx3a8YBg0",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE5ODUyNDkzLCJpYXQiOjE2ODk2MTI0OTMsImp0aSI6ImQ3OTE0YzM0YTI0NzRkMWM4MzAzYzE1ZmViOTliZDI3IiwidXNlcl9pZCI6Mn0.IzVDVM4L79aZuI5L4b0MNLNJqQ87DUzQdTRKnV950qc",
 									"type": "string"
 								}
 							]
@@ -787,7 +867,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://bangabandhu.agrexcointernational.com/bangabandhu/bookmark/1/",
+							"raw": "https://bangabandhu.agrexcointernational.com/bangabandhu/bookmark/6/",
 							"protocol": "https",
 							"host": [
 								"bangabandhu",
@@ -797,7 +877,7 @@
 							"path": [
 								"bangabandhu",
 								"bookmark",
-								"1",
+								"6",
 								""
 							]
 						}
@@ -805,32 +885,12 @@
 					"response": []
 				},
 				{
-					"name": "add",
+					"name": "delete",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE4MTczODk3LCJpYXQiOjE2ODc5MzM4OTcsImp0aSI6ImZjYWFhNmEyNmNmNDQwYmE5ZjdiOGY2Yzc2NDYxZGE1IiwidXNlcl9pZCI6Mn0.kUgm4IuPcyrZK8GL5PfFC-6MloxwM9HcMHAx3a8YBg0",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
+						"method": "DELETE",
 						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "page_id",
-									"value": "2",
-									"type": "text"
-								}
-							]
-						},
 						"url": {
-							"raw": "https://bangabandhu.agrexcointernational.com/bangabandhu/bookmark/",
+							"raw": "https://bangabandhu.agrexcointernational.com/bangabandhu/bookmark/5/",
 							"protocol": "https",
 							"host": [
 								"bangabandhu",
@@ -840,6 +900,7 @@
 							"path": [
 								"bangabandhu",
 								"bookmark",
+								"5",
 								""
 							]
 						}

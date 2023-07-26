@@ -67,20 +67,36 @@ class TokenRefreshView(APIView):
             return Response(status=400)
 
 
-class UserDetailsView(generics.RetrieveUpdateDestroyAPIView):
+class UserDetailsView(APIView):
     queryset = User
     serializer_class = UserSerializer
+
+    def get_object(self):
+        id = self.request.user.id
+        user = self.queryset.objects.get(id=id)
+        return user
+
+    def get(self, *args, **kwargs):
+        user = self.get_object()
+        serializer = self.serializer_class(user)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def post(self, request, *args, **kwargs):
+        user = self.get_object()
+        serializer = self.serializer_class(instance=user, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class LogoutView(APIView):
     def post(self, request):
         refresh_token = request.data.get("refresh_token")
-        print(refresh_token)
 
         if refresh_token:
             try:
                 token = RefreshToken(refresh_token)
-                print(token)
                 token.blacklist()
                 return Response({"message": "Logout successful."})
             except Exception:

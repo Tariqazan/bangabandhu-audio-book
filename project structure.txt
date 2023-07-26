@@ -1,4 +1,0 @@
-1. add languages
-2. all books list
-3. index of books
-4. pages with audio

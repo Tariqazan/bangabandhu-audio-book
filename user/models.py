@@ -34,6 +34,7 @@ class User(AbstractUser):
         Group, on_delete=models.DO_NOTHING, blank=True, null=True)
     email = models.CharField(max_length=64, blank=True, null=True, unique=True)
     profile_pic = models.ImageField(upload_to="user/", blank=True, null=True)
+    date_of_birth = models.DateTimeField(blank=True, null=True)
     status = models.CharField(max_length=10, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

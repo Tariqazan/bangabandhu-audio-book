@@ -1,4 +1,7 @@
-from rest_framework import generics
+from rest_framework import generics, status
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
 from .models import Language, AudioBook, PageLineSerial, PageAudio, BookContent, Bookmark
 from .serializers import LanguageSerializer, AudioBookSerializer, BookContentSerializer, PageLineSerializer, PageAudioSerializer, BookmarkSerializer
 
@@ -59,17 +62,18 @@ class PageRetrieveView(generics.RetrieveAPIView):
     serializer_class = PageLineSerializer
 
 
-class PageAudioListView(generics.ListAPIView):
+class PageAudioListView(APIView):
     queryset = PageAudio
     serializer_class = PageAudioSerializer
 
-    def get_queryset(self):
+    def get(self, request):
         language_id = self.request.GET.get('lang')
         page_number = self.request.GET.get('page_number')
         chapter_name = self.request.GET.get('chapter_name')
-        page_audios = self.queryset.objects.filter(
-            page_number__audio_book__language_id=language_id, page_number__number=page_number, page_number__chapter__content=chapter_name)
-        return page_audios
+        page_audio = self.queryset.objects.filter(
+            page_number__audio_book__language_id=language_id, page_number__number=page_number, page_number__chapter__content=chapter_name).last()
+        page_audio_data = self.serializer_class(page_audio)
+        return Response(page_audio_data.data, status=status.HTTP_200_OK)
 
 
 class PageAudioRetrieveView(generics.RetrieveAPIView):
@@ -82,16 +86,16 @@ class BookmarkListCreateView(generics.ListCreateAPIView):
     serializer_class = BookmarkSerializer
 
     def get_queryset(self):
-        bookmarks = self.queryset.objects.filter(
+        bookmarks = self.queryset.objects.filter(line_serial__page_number__audio_book__language_id=self.request.GET.get('lang'),
             user_id=self.request.user.id)
         return bookmarks
 
     def perform_create(self, serializer):
         serializer.save(user_id=self.request.user.id,
-                        page_id=self.request.data['page_id'])
+                        line_serial_id=self.request.data['line_serial'])
         return super().perform_create(serializer)
 
 
-class BookmarkRetrieveView(generics.RetrieveAPIView):
+class BookmarkRetrieveView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Bookmark.objects.all()
     serializer_class = BookmarkSerializer
